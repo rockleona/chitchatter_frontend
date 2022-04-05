@@ -6,7 +6,9 @@ import Drawer from "./layout/Drawer.vue";
 </script>
 
 <template>
-  <Header></Header>
-  <Drawer></Drawer>
-  <Footer></Footer>
+  <div class="flex flex-col h-screen justify-between">
+    <Header></Header>
+    <Drawer></Drawer>
+    <Footer></Footer>
+  </div>
 </template>
