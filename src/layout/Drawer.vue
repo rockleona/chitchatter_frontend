@@ -17,7 +17,10 @@
           </div>
         </div>
       </div>
-      <div class="col-span-2 h-full m-5 bg-secondary-light" v-if="status_toggle">
+      <div
+        class="col-span-2 h-full m-5 bg-secondary-light rounded-lg"
+        v-if="status_toggle"
+      >
         <div class="grid grid-cols-4 gap-10 m-5">
           <h1 class="col-span-4 text-3xl font-kurewa text-center font-bold text-primary">
             相關新聞
@@ -90,8 +93,10 @@ export default {
     pickAWord() {
       this.statusChecker();
       const lucky_number = getRandomInt(this.keyword_json_length);
-      this.picked_dict = this.keyword_json.data[lucky_number];
-      this.reformat_news = this.picked_dict.news;
+      this.picked_dict.title = this.keyword_json.data[lucky_number].title;
+      this.picked_dict.time = this.keyword_json.data[lucky_number].time;
+      this.picked_dict.traffic = this.keyword_json.data[lucky_number].traffic;
+      this.reformat_news = this.keyword_json.data[lucky_number].news;
     },
     statusChecker() {
       if (!this.status_toggle) {
