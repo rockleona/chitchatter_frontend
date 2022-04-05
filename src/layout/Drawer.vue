@@ -101,6 +101,7 @@ export default {
       this.picked_dict.time = this.keyword_json.data[lucky_number].time;
       this.picked_dict.traffic = this.keyword_json.data[lucky_number].traffic;
       this.reformat_news = this.keyword_json.data[lucky_number].news;
+      window.scrollTo(0, 0);
     },
     statusChecker() {
       if (!this.status_toggle) {
