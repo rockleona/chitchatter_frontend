@@ -2,10 +2,10 @@
   <div class="container mx-auto my-5 py-2">
     <div class="grid grid-cols-4 gap-10">
       <div
-        class="col-span-2 h-full flex flex-col justify-center items-end"
+        class="col-span-4 h-full flex flex-col justify-center items-center lg:col-span-2 lg:items-end"
         v-if="status_toggle"
       >
-        <h1 class="text-right text-5xl font-kurewa">
+        <h1 class="text-center lg:text-right text-5xl font-kurewa">
           你抽到的話題是:
           <span class="text-base-100 font-bold">{{ picked_dict.title }}</span>
         </h1>
@@ -18,14 +18,18 @@
         </div>
       </div>
       <div
-        class="col-span-2 h-full m-5 bg-secondary-light rounded-lg"
+        class="col-span-4 h-full m-5 bg-secondary-light rounded-lg lg:col-span-2"
         v-if="status_toggle"
       >
         <div class="grid grid-cols-4 gap-10 m-5">
           <h1 class="col-span-4 text-3xl font-kurewa text-center font-bold text-primary">
             相關新聞
           </h1>
-          <div class="col-span-2" v-for="news in this.picked_dict.news" :key="news[0]">
+          <div
+            class="col-span-4 lg:col-span-2"
+            v-for="news in this.picked_dict.news"
+            :key="news[0]"
+          >
             <NewsCard
               :title="news[0]"
               :content="news[1]"
